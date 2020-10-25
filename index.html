@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Expresiones Regulares</title>
+    
+</head>
+<body>
+    <div class="container mx-auto mt-10 bg-white">     
+        <header id="header" class="bg-pink-800 p-3 font-bold">
+            Validaci&oacute;n con Expresiones Regulares
+        </header>
+
+        <div class="flex flex-col py-10 px-5 mx-auto pb-0 max-w-lg">
+            <p class="text-center text-lg font-light">Bienvenido a Validaci&oacute;n con Expresiones Regulares, el formulario se debe llenar de la siguiente manera:</p>
+            <hr size="5" class="my-5">
+            <div class="font-light">
+                <ul>
+                    <li> <strong> Usuario: </strong> el usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</li>
+                    <li><strong>Correo:</strong> el correo solo puede contener letras, numeros, puntos, guiones y guion bajo. </li>
+                    <li><strong>Contraseña:</strong> debe iniciar con una letra mayuscula seguida de 3 números luego seguida de 3 letras minúsculas y luego de tres caracteres especiales.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <form id="formulario" class="py-10 px-5 mt-0 max-w-lg mx-auto">
+
+            <div class="mb-10 formulario__grupo" id="grupo__usuario">
+                <label for="usuario" class="cursor-pointer formulario__label">Usuario:</label>
+                <div class="relative formulario__grupo-input">
+                    <input class="formulario__input" name="usuario" id="usuario" type="text">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>    
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+            </div>
+            <div class="mb-10 formulario__grupo" id="grupo__correo">
+                <label for="email" class="cursor-pointer formulario__label">Correo:</label>
+                <div class="relative formulario__grupo-input">
+                    <input class="formulario__input" name="correo" id="correo" type="email">
+                    <i class="formulario__validacion-estado fas fa-times-circle" ></i>                    
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+            </div>
+            <div class="mb-10 formulario__grupo" id="grupo__password"> 
+                <label for="password" class="cursor-pointer formulario__label">Contraseña:</label>
+                <div class="relative formulario__grupo-input">
+                    <input class="formulario__input" name="password" id="password" type="text">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>  
+                </div>
+                <p class="formulario__input-error">La contraseña debe iniciar con una letra mayuscula seguida de 3 números luego seguida de 3 letras minúsculas y luego de tres caracteres especiales.</p>
+            </div>
+
+            <div  id="spinner">
+                <div class="sk-chase">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div>
+            </div>
+            
+            <div class="flex justify-between">
+                    <button 
+                        id="enviar" class="w-full bg-blue-600 px-2 py-5 text-white items-center  mr-5 uppercase font-bold flex justify-center" 
+                        type="submit" 
+                    >Validar
+                        <i class="material-icons right text-white ml-3">send</i>
+                    </button>
+
+                    <button 
+                        id="resetBtn" 
+                        class="w-full bg-green-600 px-2 py-5 text-white items-center uppercase font-bold flex justify-center" 
+                        type="button"
+                    >Resetear Form
+                            <i class="material-icons right ml-3">delete</i>
+                    </button>
+            </div>
+        </form> 
+    </div>
+
+    <script src="js/logic.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
